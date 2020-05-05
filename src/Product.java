@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class Product {
 
@@ -62,4 +63,19 @@ public class Product {
     public static int getCount() {
         return count;
     }
-}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Product))
+            return false;
+        Product product = (Product) o;
+        return Double.compare(product.price, this.price) == 0 &&
+                Objects.equals(this.code, product.code) &&
+                Objects.equals(this.description, product.description);
+    }
+
+
+    }
+

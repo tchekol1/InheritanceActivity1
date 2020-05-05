@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Software extends Product {
 
     private String programmer;
@@ -37,4 +39,20 @@ public class Software extends Product {
                 ", os='" + os + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Software))
+            return false;
+        if (!super.equals(o))
+            return false;
+        Software software = (Software) o;
+        return Objects.equals(this.programmer, software.programmer) &&
+                Objects.equals(this.platform, software.platform) &&
+                Objects.equals(this.os, software.os);
+    }
+
+
 }

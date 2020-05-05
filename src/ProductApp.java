@@ -17,6 +17,8 @@ public class ProductApp {
         c.setAuthor("Dave W.");
         c.setPrice(49.99);
         c.setDescription("Python programming book");
+        Book d=new Book();
+         d=c;
         System.out.println(c.toString());
         System.out.println();
         Software s = new Software();
@@ -30,6 +32,9 @@ public class ProductApp {
         System.out.println("======");
         //Number of products
         System.out.println("Number of Products "+ Product.getCount());
+//      comparing book two books
+        System.out.println(b.equals(c));
+        System.out.println(d.equals(c));
 
 
 
